@@ -1,0 +1,186 @@
+/* ===========================================================
+   Fondo cálido a pantalla completa (atardecer recreado con CSS)
+   =========================================================== */
+.login-fondo {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #e9603a; /* color de respaldo */
+  overflow: hidden; /* recorta el desenfoque que sobresale en los bordes */
+}
+
+/* Capa de imagen de fondo, desenfocada y por detrás del contenido.
+   La imagen (capas) se aplica desde App.js con estilo en línea, para poder
+   leer la foto desde public/fondo.jpg en tiempo de ejecución. */
+.login-fondo-imagen {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  /* La escala compensa el "halo" transparente que deja el desenfoque en los
+     bordes, para que no se vea el color de respaldo asomando. */
+  transform: scale(1.1);
+}
+
+/* Contenedor de la grilla de Bootstrap, nítido y por encima de la capa borrosa.
+   El ancho lo gestiona la clase .container + las columnas col-*. */
+.login-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mantiene el formulario angosto y centrado dentro de la columna responsiva. */
+.form-registro {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logo-svg {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 2.75rem;
+  /* sombra sutil para que el trazo blanco resalte sobre zonas claras */
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.45));
+}
+
+/* ===========================================================
+   Campos "glass" con icono
+   =========================================================== */
+.campo-icono {
+  position: relative;
+}
+
+.campo-icono .icono {
+  position: absolute;
+  left: 1.05rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+}
+
+.campo-icono .icono svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.login-fondo .form-control {
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 2rem;
+  color: #ffffff;
+  padding: 0.75rem 1.1rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.login-fondo .form-control.con-icono {
+  padding-left: 2.9rem;
+}
+
+.login-fondo .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Cuando el navegador autocompleta (correo/contraseña), aplica su propio
+   fondo blanco con texto oscuro. Estas reglas conservan el estilo "glass":
+   - text-fill-color/caret mantienen el texto en blanco.
+   - la transición larga evita que se aplique el fondo del autocompletado,
+     conservando el fondo translúcido propio. */
+.login-fondo .form-control:-webkit-autofill,
+.login-fondo .form-control:-webkit-autofill:hover,
+.login-fondo .form-control:-webkit-autofill:focus,
+.login-fondo .form-control:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff;
+  caret-color: #ffffff;
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.login-fondo .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.18);
+}
+
+/* Estado de error legible sobre el fondo cálido */
+.login-fondo .form-control.is-invalid {
+  border-color: rgba(255, 120, 90, 0.95);
+  background-image: none;
+}
+
+.login-fondo .form-control.is-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 120, 90, 0.25);
+}
+
+.login-fondo .invalid-feedback {
+  color: #ffe2db;
+  font-size: 0.8rem;
+  padding-left: 1.05rem;
+}
+
+/* ===========================================================
+   Botón principal (naranja)
+   =========================================================== */
+.btn-comenzar {
+  background-color: #ef6c39;
+  border: none;
+  color: #ffffff;
+  border-radius: 2rem;
+  padding: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.btn-comenzar:hover,
+.btn-comenzar:focus {
+  background-color: #e85f2c;
+  color: #ffffff;
+}
+
+.btn-comenzar:disabled {
+  background-color: rgba(239, 108, 57, 0.6);
+  color: #ffffff;
+}
+
+/* ===========================================================
+   Mensajes y enlaces inferiores
+   =========================================================== */
+.mensaje-exito {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.form-enlaces {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.75rem;
+  padding: 0 0.5rem;
+}
+
+.enlace-suave {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.enlace-suave:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
