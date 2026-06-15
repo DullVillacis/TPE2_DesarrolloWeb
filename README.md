@@ -4,7 +4,7 @@ Formulario de **registro** desarrollado con **React** y estilizado con **Bootstr
 
 ---
 
-## 🎯 Características
+## Características
 
 - Formulario de registro con tres campos: **Nombre**, **Correo** y **Contraseña**.
 - **Validación en tiempo real** mientras el usuario escribe (no hay que esperar al envío).
@@ -23,7 +23,7 @@ Formulario de **registro** desarrollado con **React** y estilizado con **Bootstr
 
 ---
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - [React 18](https://react.dev/) (Hook `useState`)
 - [Bootstrap 5](https://getbootstrap.com/)
@@ -32,7 +32,7 @@ Formulario de **registro** desarrollado con **React** y estilizado con **Bootstr
 
 ---
 
-## 📋 Requisitos previos
+## Requisitos previos
 
 Antes de empezar necesitas tener instalado:
 
@@ -48,7 +48,7 @@ npm --version
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 1. Clona el repositorio:
 
@@ -72,7 +72,7 @@ npm --version
 
 ---
 
-## ▶️ Ejecución
+## Ejecución
 
 Para iniciar la aplicación en modo desarrollo:
 
@@ -92,13 +92,13 @@ npm run build
 
 ---
 
-## 🖼️ Imagen de fondo
+## Imagen de fondo
 
 El fondo usa una imagen ubicada en `public/fondo.jpg`. Para cambiarla, reemplaza ese archivo por la tuya (mismo nombre). Si el archivo no existe, se muestra automáticamente un degradado cálido de respaldo.
 
 ---
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 formulario-react/
@@ -122,7 +122,7 @@ formulario-react/
 
 ---
 
-## 🧩 ¿Cómo funciona? (resumen por sesiones)
+## ¿Cómo funciona? (resumen por sesiones)
 
 - **Sesión 1 — React:** se estructuran los componentes (`App.js`, `FormularioRegistro.js`) y se crea el formulario con los inputs de Nombre, Correo y Contraseña.
 - **Sesión 2 — Bootstrap:** se instala Bootstrap (`npm install bootstrap`), se importa en `src/index.js` y se aplican clases como `container`, `row`, `col-*`, `form-control` y `btn` para lograr un diseño responsivo.
@@ -130,6 +130,6 @@ formulario-react/
 
 ---
 
-## 👤 Autor
+## Autor
 
 Proyecto académico — Unidad 2: Frameworks (React + CSS Framework).

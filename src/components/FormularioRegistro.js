@@ -110,7 +110,7 @@ function FormularioRegistro() {
 
       {/* Mensaje de éxito tras un envío correcto. */}
       {enviado && (
-        <div className="mensaje-exito mt-3">¡Registro completado con éxito! 🎉</div>
+        <div className="mensaje-exito mt-3">¡Registro completado con éxito!</div>
       )}
 
       {/* Enlaces inferiores, al estilo del diseño de referencia. */}
